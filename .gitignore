@@ -1,0 +1,32 @@
+# Terraform providers and local cache
+**/.terraform/*
+
+# Terraform state and plan files
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.plan
+crash.log
+crash.*.log
+
+# Terraform variables may contain secrets
+*.tfvars
+*.tfvars.json
+
+# Credentials and environment files
+.env
+.env.*
+!.env.example
+.aws/
+credentials
+
+# Private keys
+*.pem
+*.key
+
+# OS files
+.DS_Store
+
+# Backup files
+*.backup
+*.bak
