@@ -300,17 +300,7 @@ resource "aws_launch_template" "app" {
     set -eux
     dnf install -y nginx
     systemctl enable --now nginx
-    cat > /usr/share/nginx/html/index.html <<'HTML'
-    <!DOCTYPE html>
-    <html>
-      <head><title>AWS DevOps Assignment</title></head>
-      <body>
-        <h1>AWS DevOps Assignment</h1>
-        <p>Nginx test page is running successfully.</p>
-        <p>Served from an EC2 instance in a private subnet.</p>
-      </body>
-    </html>
-    HTML
+    aws s3 cp s3://aws-devops-assignment-app-storage-323708468873-ap-south-1/index.html /usr/share/nginx/html/index.html --region ap-south-1
   USERDATA
   )
 
